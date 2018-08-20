@@ -17,28 +17,33 @@ class MessagesController extends Controller
     public function message(Request $request)
     {
 
-        $message = MessageModel::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'question' => $request->question,
-        ]);
+        if ($request['g-recaptcha-response']){
 
-        $messageID = $message->id;
+            $message = MessageModel::create([
+                'name' => $request->name,
+                'email' => $request->email,
+                'question' => $request->question,
+            ]);
 
-        if ($request->file('files')){
-            foreach ($request->file('files') as $file) {
-                $filename = $file->store('files');
-                File::create([
-                    'message_id' => $messageID,
-                    'name' => $filename
-                ]);
+            $messageID = $message->id;
+
+            if ($request->file('files')){
+                foreach ($request->file('files') as $file) {
+                    $filename = $file->store('files');
+                    File::create([
+                        'message_id' => $messageID,
+                        'name' => $filename
+                    ]);
+                }
             }
+
+            $adminEmail = Config::where('name', 'email')->first();
+
+            mail($adminEmail->value, 'Добавлена новая заявка на сайте', 'Код заявки: '.$messageID);
+
+            return view('sent');
         }
-
-        $adminEmail = Config::where('name', 'email')->first();
-
-        mail($adminEmail->value, 'Добавлена новая заявка на сайте', 'Код заявки: '.$messageID);
-
-        return view('sent');
+        else
+            return view('welcome');
     }
 }
