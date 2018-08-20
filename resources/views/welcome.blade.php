@@ -55,6 +55,12 @@
 
                             <div class="form-group">
                                 <div class="col-md-6 col-md-offset-4">
+                                    <div class="g-recaptcha" data-sitekey="6Le512oUAAAAAO1aHSNyldmSYQNN1e3ynkWNGFR9"></div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-md-6 col-md-offset-4">
                                     <button type="submit" class="btn btn-primary">
                                         Отправить
                                     </button>

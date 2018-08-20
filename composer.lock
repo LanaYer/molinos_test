@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "642ea1ed491cdbb6b1c2e47b2a00acac",
+    "content-hash": "945352027cbb954b219ac521ed47a943",
     "packages": [
         {
             "name": "bonecms/laravel-captcha",
@@ -63,6 +63,64 @@
                 "captcha"
             ],
             "time": "2018-07-11T12:33:31+00:00"
+        },
+        {
+            "name": "buzz/laravel-google-captcha",
+            "version": "v2.1.10",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/thinhbuzz/laravel-google-captcha.git",
+                "reference": "d6e8efdd11475cd590acf3041976f996e52fb5df"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/thinhbuzz/laravel-google-captcha/zipball/d6e8efdd11475cd590acf3041976f996e52fb5df",
+                "reference": "d6e8efdd11475cd590acf3041976f996e52fb5df",
+                "shasum": ""
+            },
+            "require": {
+                "google/recaptcha": "1.*",
+                "illuminate/support": "5.*",
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Buzz\\LaravelGoogleCaptcha\\CaptchaServiceProvider"
+                    ],
+                    "aliases": {
+                        "Captcha": "Buzz\\LaravelGoogleCaptcha\\CaptchaFacade"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Buzz\\LaravelGoogleCaptcha\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "ThinhBuzz",
+                    "email": "mr.thinhbuzz@gmail.com",
+                    "homepage": "https://www.facebook.com/thinh.buzz"
+                }
+            ],
+            "description": "Google captcha for laravel 5.*",
+            "homepage": "https://github.com/thinhbuzz/laravel-google-captcha",
+            "keywords": [
+                "captcha",
+                "google-captcha",
+                "laravel",
+                "laravel5",
+                "no-captcha",
+                "recaptcha"
+            ],
+            "time": "2018-04-18T15:56:14+00:00"
         },
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -209,6 +267,53 @@
                 "parser"
             ],
             "time": "2018-03-08T01:11:30+00:00"
+        },
+        {
+            "name": "google/recaptcha",
+            "version": "1.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/google/recaptcha.git",
+                "reference": "e7add3be59211482ecdb942288f52da64a35f61a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/google/recaptcha/zipball/e7add3be59211482ecdb942288f52da64a35f61a",
+                "reference": "e7add3be59211482ecdb942288f52da64a35f61a",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^2.2.20|^2.12",
+                "php-coveralls/php-coveralls": "^2.1",
+                "phpunit/phpunit": "^4.8.36|^5.7.27|^6.59|^7"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.2.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "ReCaptcha\\": "src/ReCaptcha"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "description": "Client library for reCAPTCHA, a free service that protects websites from spam and abuse.",
+            "homepage": "https://www.google.com/recaptcha/",
+            "keywords": [
+                "Abuse",
+                "captcha",
+                "recaptcha",
+                "spam"
+            ],
+            "time": "2018-08-05T09:31:53+00:00"
         },
         {
             "name": "jakub-onderka/php-console-color",
