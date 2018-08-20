@@ -24,12 +24,10 @@ use Illuminate\Support\Facades\Storage;
                         <p><strong>Прикрепленные файлы: </strong></p>
                         <div class="row">
                             @foreach($message->files as $file)
-                                <p>
-                                    <a href="http://molinostest.000webhostapp.com/storage/app/{{$file->name}}"
-                                       data-lightbox="product-preview-gallery" class="message-image">
-                                        <img src="http://molinostest.000webhostapp.com/storage/app/{{$file->name}}" />
-                                    </a>
-                                </p>
+                                <a href="http://molinostest.000webhostapp.com/storage/app/{{$file->name}}"
+                                   data-lightbox="product-preview-gallery" class="message-image">
+                                    <img src="http://molinostest.000webhostapp.com/storage/app/{{$file->name}}" />
+                                </a>
                             @endforeach
                         </div>
 

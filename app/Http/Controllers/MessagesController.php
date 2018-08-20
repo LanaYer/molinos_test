@@ -37,7 +37,7 @@ class MessagesController extends Controller
 
         $adminEmail = Config::where('name', 'email')->first();
 
-        mail($adminEmail, 'Добавлена новая заявка на сайте', 'Код заявки: '.$messageID);
+        mail($adminEmail->value, 'Добавлена новая заявка на сайте', 'Код заявки: '.$messageID);
 
         return view('sent');
     }

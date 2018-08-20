@@ -17,6 +17,8 @@
 .message-image img{
     height: 50px;
     width: auto;
+    display: inline-block;
+    float: left;
 }
 .panel-heading{
     min-height: 45px;
