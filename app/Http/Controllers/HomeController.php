@@ -30,6 +30,7 @@ class HomeController extends Controller
         return view('messages.index', ['messages' => Message::all(), 'adminEmail' => $adminEmail->value]);
     }
 
+
     /**
      * @param $id
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
@@ -45,8 +46,10 @@ class HomeController extends Controller
      */
     public function answer(Message $message, Request $request)
     {
+
         mail($message->email, 'Ответ на Ваше сообщение', $request->answer);
-        return view('messages.index');
+
+        return redirect()->route('home');
     }
 
     /**
@@ -56,7 +59,8 @@ class HomeController extends Controller
     public function delete(Message $message)
     {
         $message->delete();
-        return view('messages.index');
+
+        return redirect()->route('home');
     }
 
     public function emailUpdate(Request $request)
@@ -64,8 +68,6 @@ class HomeController extends Controller
         Config::where('name', 'email')
             ->update(['value' => $request->email]);
 
-        $adminEmail = Config::where('name', 'email')->first();
-
-        return view('messages.index', ['adminEmail' => $adminEmail->value]);
+        return redirect()->route('home');
     }
 }

@@ -6,7 +6,6 @@
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
                     <div class="panel-heading">Напишите нам</div>
-
                     <div class="panel-body">
                         <form class="form-horizontal" method="POST" action="{{ route('message') }}" enctype="multipart/form-data">
                             {{ csrf_field() }}
@@ -49,10 +48,8 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="question" class="col-md-4 control-label">Файлы</label>
-
-                                <div class="col-md-6">
-                                    <input type="file" multiple name="files[]">
+                                <div class="col-md-6 col-md-offset-4">
+                                    <input type="file" multiple name="files[]" accept="image/*">
                                 </div>
                             </div>
 

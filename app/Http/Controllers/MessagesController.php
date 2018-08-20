@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Message as MessageModel;
 use App\Models\File;
+use App\Models\Config;
 use Illuminate\Support\Facades\Storage;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 
@@ -24,12 +25,14 @@ class MessagesController extends Controller
 
         $messageID = $message->id;
 
-        foreach ($request->file('files') as $file) {
-            $filename = $file->store('files');
-            File::create([
-                'message_id' => $messageID,
-                'name' => $filename
-            ]);
+        if ($request->file('files')){
+            foreach ($request->file('files') as $file) {
+                $filename = $file->store('files');
+                File::create([
+                    'message_id' => $messageID,
+                    'name' => $filename
+                ]);
+            }
         }
 
         $adminEmail = Config::where('name', 'email')->first();
