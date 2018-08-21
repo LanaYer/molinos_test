@@ -55,7 +55,7 @@
 
                             <div class="form-group">
                                 <div class="col-md-6 col-md-offset-4">
-                                    <div class="g-recaptcha" data-sitekey="6Le512oUAAAAAO1aHSNyldmSYQNN1e3ynkWNGFR9"></div>
+                                    {!! app('captcha')->display() !!}
                                 </div>
                             </div>
 

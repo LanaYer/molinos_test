@@ -3,8 +3,8 @@
  * Secret key and Site key get on https://www.google.com/recaptcha
  * */
 return [
-    'secret' => '6LcF5GoUAAAAAJ-dW6kH13cfeY3PQApCEPbwEqD_',
-    'sitekey' => '6LcF5GoUAAAAAEdM0t7koMB2a247eY_qjk6e4dVj',
+    'secret' => env('CAPTCHA_SECRET', '6Le512oUAAAAAAK3DU9inw2pmXdIgC1HbClP-GY_'),
+    'sitekey' => env('CAPTCHA_SITEKEY', '6Le512oUAAAAAO1aHSNyldmSYQNN1e3ynkWNGFR9'),
     /**
      * @var string|null Default ``null``.
      * Custom with function name (example customRequestCaptcha) or class@method (example \App\CustomRequestCaptcha@custom).
