@@ -20,7 +20,7 @@ class MessagesController extends Controller
         $message = MessageModel::create([
             'name' => $request->name,
             'email' => $request->email,
-            'question' => $request->question,
+            'question' => isset($request->question)?$request->question:'',
         ]);
 
         $messageID = $message->id;

@@ -18,7 +18,6 @@
     <script src="{{ asset('public/js/jquery-3.2.1.min.js') }}"></script>
     <script src="{{ asset('public/js/dropzone.js') }}"></script>
     <script src="{{ asset('public/js/lightbox.min.js') }}"></script>
-    <script src='https://www.google.com/recaptcha/api.js'></script>
 
 </head>
 <body>
